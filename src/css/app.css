@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(165, 164, 164);
+}
+
+#editor-bg {
+    background-color: #ffffff;
+    z-index: -1;
+}
+
+.default-textbox {
+    position: absolute;
+    width: 240px;
+    height: 80px;
+    z-index: 0;
+    border: 2px black dashed;
+    touch-action: none;
+    box-sizing: border-box;
+    min-height: 40px;
+    min-width: 40px;
+}
+
+.delete-textbox {
+    position: absolute;
+    top:-10px;
+    right:-10px;
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: red;
+}
+
+.textbox-input {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    background-color: lightgoldenrodyellow;
+    box-sizing: border-box;
+    resize: none;
+}
