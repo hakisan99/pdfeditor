@@ -2,19 +2,19 @@
 import React from "react";
 import interact from "interactjs";
 const  dragMoveListener  = (event) => {
-    let target = event.target
+    let target = event.target;
     // keep the dragged position in the data-x/data-y attributes
-    let x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
-    let y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+    let x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+    let y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
   
     // translate the element
     target.style.webkitTransform =
       target.style.transform =
-        'translate(' + x + 'px, ' + y + 'px)'
+        'translate(' + x + 'px, ' + y + 'px)';
   
     // update the posiion attributes
-    target.setAttribute('data-x', x)
-    target.setAttribute('data-y', y)
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
 }
 
 const textbox = interact(".container-textbox");
@@ -44,14 +44,12 @@ textbox.draggable({
     listeners: {
         start(evt) {
             evt.stopPropagation();
-            console.log("start")
         },
         move(evt) {
             dragMoveListener(evt)
         },
         end(evt) {
             evt.stopPropagation();
-            console.log("end")
         }
     }
 });
