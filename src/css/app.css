@@ -7,30 +7,46 @@ body {
     z-index: -1;
 }
 
-.default-textbox {
+.container-textbox {
     position: absolute;
     width: 240px;
     height: 80px;
     z-index: 0;
-    border: 2px black dashed;
     touch-action: none;
     box-sizing: border-box;
     min-height: 40px;
     min-width: 40px;
 }
 
-.delete-textbox {
+.delete-handle {
+    display: none;
     position: absolute;
     top:-10px;
     right:-10px;
-    width:20px;
-    height: 20px;
-    border-radius: 50%;
+    widows: 24px;
+    height: 24px;
+    border-radius: 8px;
     cursor: pointer;
     background-color: red;
 }
 
-.textbox-input {
+.container-textbox:focus-within  {
+    border: 3px black dashed;
+}
+
+.container-textbox:active > .delete-handle{
+    display: block;
+}
+
+.container-textbox:active{
+    border: 3px black dashed;
+}
+
+.container-textbox:focus-within > .delete-handle {
+    display:block
+}
+
+.input-textbox {
     width: 100%;
     height: 100%;
     max-width: 100%;
@@ -40,3 +56,37 @@ body {
     box-sizing: border-box;
     resize: none;
 }
+
+.drag-handle {
+    position: absolute;
+    top:-10px;
+    left:-10px;
+    width:100%;
+    height: 20px;
+    cursor: move;
+}
+
+
+.delete-handle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+  }
+  .delete-handle:hover {
+    opacity: 1;
+  }
+  .delete-handle:before, .delete-handle:after {
+    position: absolute;
+    left:12px;
+    content: ' ';
+    height: 24px;
+    width: 2px;
+    background-color: #000000;
+  }
+  .delete-handle:before {
+    transform: rotate(45deg);
+  }
+  .delete-handle:after {
+    transform: rotate(-45deg);
+  }
